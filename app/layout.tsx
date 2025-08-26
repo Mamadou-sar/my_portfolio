@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { NextFont } from 'next/dist/compiled/@next/font';
+import NavBar from "@/components/NavBar";
 
 const satoshi: NextFont = localFont({
     src: [
@@ -29,7 +30,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en' data-theme='masskooramy'>
-            <body className={satoshi.className}>{children}</body>
+            <body className={satoshi.className}>
+            <NavBar/>
+            {children}
+            </body>
         </html>
     );
 }
