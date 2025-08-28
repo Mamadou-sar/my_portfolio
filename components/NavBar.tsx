@@ -5,17 +5,15 @@ import {usePathname} from 'next/navigation';
 
 const menus = [
     {name: 'Home', link: '/'},
+    {name: 'About', link: '/about'},
     {name: 'Services', link: '/services'},
     {name: 'Work', link: '/work'},
-    {name: 'testimonials', link: '/testimonials'},
-    {name: 'About', link: '/about'},
     {name: 'Blog', link: '/blog'},
 ];
 export default function NavBar() {
     const pathname = usePathname();
     return (
-
-        <div className='navbar bg-primary text-primary-content px-4 md:px-8 lg:px-16 border-b border-b-primary-content/20 sticky'>
+        <div className='navbar bg-primary text-primary-content px-4 md:px-8 lg:px-16 border-b border-b-primary-content/20 sticky top-0 z-50'>
             <div className='w-full flex items-center justify-between'>
                 {/* logo */}
                 <div className='flex items-center gap-2'>
@@ -76,6 +74,5 @@ export default function NavBar() {
                 </div>
             </div>
         </div>
-
     );
 }

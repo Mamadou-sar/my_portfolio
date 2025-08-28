@@ -2,6 +2,7 @@
 import {motion} from "framer-motion";
 import {
     SiCss3,
+    SiDart,
     SiDjango,
     SiExpress,
     SiFlutter,
@@ -11,6 +12,7 @@ import {
     SiJavascript,
     SiNextdotjs,
     SiNodedotjs,
+    SiPython,
     SiReact,
     SiTailwindcss,
     SiTypescript,
@@ -32,11 +34,7 @@ const skills = [
         icon: <SiDjango className="text-green-700"
                         size={40}/>
     },
-    {
-        name: "Flutter",
-        icon: <SiFlutter className="text-blue-400"
-                         size={40}/>
-    },
+
     {
         name: "Node.js",
         icon: <SiNodedotjs className="text-green-600"
@@ -48,6 +46,22 @@ const skills = [
                          size={40}/>
     },
     {
+        name: "TailwindCSS",
+        icon: <SiTailwindcss className="text-cyan-500"
+                             size={40}/>
+    },
+    {
+        name: "Flutter",
+        icon: <SiFlutter className="text-blue-400"
+                         size={40}/>
+    },
+    {
+        name: "Python",
+        icon: <SiPython className="text-[#3776AB]"
+                        size={40}/>
+    }
+    ,
+    {
         name: "TypeScript",
         icon: <SiTypescript className="text-blue-600"
                             size={40}/>
@@ -58,9 +72,9 @@ const skills = [
                             size={40}/>
     },
     {
-        name: "TailwindCSS",
-        icon: <SiTailwindcss className="text-cyan-500"
-                             size={40}/>
+        name: "Dart",
+        icon: <SiDart className="text-[#0175C2]"
+                      size={40}/> // Bleu officiel Dart
     },
     {
         name: "HTML",
@@ -82,14 +96,16 @@ const skills = [
         icon: <SiGithub className="text-gray-800"
                         size={40}/>
     },
+
+
 ];
 
 export default function Skills() {
     return (
         <section id="skills"
-                 className="py-16 bg-white mt-12">
-            <div className="max-w-6xl mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">
+                 className="py-16 bg-white mt-12 max-w-7xl mx-auto">
+            <div className=" px-6">
+                <h2 className="text-5xl font-bold text-gray-800 mb-12 text-center">
                     Compétences Techniques
                 </h2>
 
