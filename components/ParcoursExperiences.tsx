@@ -262,7 +262,7 @@ const ExperienceSection = () => {
                                 <div className="text-gray-400 text-sm">Années d'expérience</div>
                             </div>
                             <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-4 text-center border border-gray-700">
-                                <div className="text-3xl font-bold text-white">20+</div>
+                                <div className="text-3xl font-bold text-white">30+</div>
                                 <div className="text-gray-400 text-sm">Projets livrés</div>
                             </div>
                             <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-4 text-center border border-gray-700">

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 // Types
 interface Skill {
@@ -13,16 +13,11 @@ interface Skill {
     description: string;
 }
 
-interface Stat {
-    label: string;
-    value: string;
-    color: string;
-}
-
 type Category = 'Frontend' | 'Backend' | 'Mobile' | 'Outils';
 
 const SkillsSection: React.FC = () => {
     const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
+    const [selectCategory, SetSelectCategory] = useState('Toutes');
 
     const skills: Skill[] = [
         {
@@ -169,8 +164,14 @@ const SkillsSection: React.FC = () => {
         Mobile: 'from-purple-500 to-pink-500',
         Outils: 'from-gray-600 to-gray-800',
     };
+    const filteredSkills =
+        selectCategory === 'Toutes'
+            ? skills
+            : skills.filter((skill) => skill.category === selectCategory);
 
-    const SkillCard: React.FC<{ skill: Skill; index: number }> = ({skill, index}) => (
+    // Skill Card Component
+
+    const SkillCard: React.FC<{ skill: Skill; index: number }> = ({ skill, index }) => (
         <div
             className='group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 hover:-translate-y-2'
             onMouseEnter={() => setHoveredSkill(index)}
@@ -224,35 +225,8 @@ const SkillsSection: React.FC = () => {
                 {skill.description}
             </p>
 
-            {/* Progress Bar */}
-            {/* <div className='relative'>
-                <div className='flex justify-between items-center mb-2'>
-                    <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
-                        Niveau
-                    </span>
-                    <span
-                        className={`text-sm font-bold px-2 py-1 rounded-lg ${
-                            skill.bgColor
-                        } text-white transition-all duration-300 ${
-                            hoveredSkill === index ? 'scale-110 shadow-lg' : ''
-                        }`}
-                    >
-                        {skill.level}%
-                    </span>
-                </div>
-                <div className='w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden'>
-                    <div
-                        className={`h-full ${skill.bgColor} rounded-full transition-all duration-1000 ease-out transform origin-left`}
-                        style={{
-                            width: `${skill.level}%`,
-                            transform: hoveredSkill === index ? 'scaleY(1.2)' : 'scaleY(1)',
-                        }}
-                    />
-                </div>
-            </div>*/}
-
             {/* Hover Effect Overlay */}
-            <div className='absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-50 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none'/>
+            <div className='absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-50 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none' />
         </div>
     );
 
@@ -275,9 +249,10 @@ const SkillsSection: React.FC = () => {
                 <div className='flex flex-wrap justify-center gap-4 mb-12'>
                     {(['Toutes', ...categories] as const).map((category: string) => (
                         <button
+                            onClick={() => SetSelectCategory(category)}
                             key={category}
                             className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                                category === 'Toutes'
+                                category === selectCategory
                                     ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
                                     : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-md hover:shadow-lg'
                             }`}
@@ -289,15 +264,13 @@ const SkillsSection: React.FC = () => {
 
                 {/* Skills Grid */}
                 <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'>
-                    {skills.map((skill, index) => (
-                        <SkillCard key={skill.name}
-                                   skill={skill}
-                                   index={index}/>
+                    {filteredSkills.map((skill, index) => (
+                        <SkillCard key={skill.name} skill={skill} index={index} />
                     ))}
                 </div>
 
                 {/* Stats Section */}
-                <div className='mt-20 grid grid-cols-2 md:grid-cols-4 gap-6'>
+                {/*<div className='mt-20 grid grid-cols-2 md:grid-cols-4 gap-6'>
                     {(
                         [
                             {
@@ -336,7 +309,7 @@ const SkillsSection: React.FC = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div>*/}
             </div>
         </section>
     );
