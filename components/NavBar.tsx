@@ -16,7 +16,8 @@ export default function NavBar() {
             <div className='w-full flex items-center justify-between'>
                 {/* logo */}
                 <div className='flex items-center gap-2'>
-                    <a className='text-lg font-bold'>KoorAmy.dev</a>
+                    <Link href='/'
+                          className='text-lg font-bold'>MasCoding</Link>
                 </div>
                 {/* menu */}
                 <div className='hidden lg:block lg:w-auto'>

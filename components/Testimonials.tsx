@@ -1,6 +1,6 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import React, {useEffect, useState} from 'react';
+import {ChevronLeft, ChevronRight, Quote, Star} from 'lucide-react';
 
 interface Testimonial {
     id: number;
@@ -65,7 +65,7 @@ const testimonialsData: Testimonial[] = [
     },
 ];
 
-const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
+const StarRating: React.FC<{ rating: number }> = ({rating}) => {
     return (
         <div className='flex space-x-1'>
             {[1, 2, 3, 4, 5].map((star) => (
@@ -80,20 +80,15 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
     );
 };
 
-const TestimonialCard: React.FC<{ testimonial: Testimonial; isActive: boolean }> = ({
-    testimonial,
-    isActive,
-}) => {
+const TestimonialCard: React.FC<{ testimonial: Testimonial; }> = ({
+                                                                      testimonial,
+                                                                  }) => {
     return (
         <div
-            className={`bg-white rounded-2xl p-4 md:p-8 shadow-lg border-2 transition-all duration-500 transform  h-fit ${
-                isActive
-                    ? 'border-primary-200 scale-105 shadow-2xl'
-                    : 'border-gray-200 hover:border-gray-300 hover:shadow-xl'
-            }`}
+            className='bg-white rounded-2xl p-4 md:p-8 shadow-lg border-2 border-primary-200 transition-all duration-500 transform'
         >
             <div className='flex  items-start space-x-1.5 md:space-x-4'>
-                <Quote className='text-primary-200 w-8 h-8 flex-shrink-0 mt-1' />
+                <Quote className='text-primary-200 w-8 h-8 flex-shrink-0 mt-1'/>
                 <div className='flex-1'>
                     <p className='text-gray-700 text-lg leading-relaxed mb-6 italic'>
                         &#34;{testimonial.content}&#34;
@@ -113,7 +108,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial; isActive: boolean }>
                                 <p className='text-gray-500 text-sm'>{testimonial.company}</p>
                             </div>
                         </div>
-                        <StarRating rating={testimonial.rating} />
+                        <StarRating rating={testimonial.rating}/>
                     </div>
                 </div>
             </div>
@@ -173,7 +168,7 @@ const Testimonials: React.FC = () => {
                         onClick={goToPrevious}
                         className='p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-gray-200 hover:border-primary-200'
                     >
-                        <ChevronLeft className='w-6 h-6 text-gray-600 group-hover:text-primary-200' />
+                        <ChevronLeft className='w-6 h-6 text-gray-600 group-hover:text-primary-200'/>
                     </button>
 
                     {/* Dots Indicator */}
@@ -195,22 +190,23 @@ const Testimonials: React.FC = () => {
                         onClick={goToNext}
                         className='p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-gray-200 hover:border-primary-200'
                     >
-                        <ChevronRight className='w-6 h-6 text-gray-600 group-hover:text-primary-200' />
+                        <ChevronRight className='w-6 h-6 text-gray-600 group-hover:text-primary-200'/>
                     </button>
                 </div>
 
                 {/* Testimonial Cards Container */}
-                <div className='relative '>
+                <div className='relative overflow-hidden'>
                     <div
                         className='flex transition-transform duration-700 ease-in-out'
-                        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                        style={{transform: `translateX(-${currentIndex * 100}%)`}}
                     >
-                        {testimonialsData.map((testimonial, index) => (
-                            <div key={testimonial.id} className='w-full flex-shrink-0 px-2'>
-                                <div className='max-w-xl mx-auto'>
+                        {testimonialsData.map((testimonial) => (
+                            <div key={testimonial.id}
+                                 className='w-full flex-shrink-0 px-2'>
+                                <div className='max-w-xl mx-auto h-full'>
                                     <TestimonialCard
                                         testimonial={testimonial}
-                                        isActive={index === currentIndex}
+
                                     />
                                 </div>
                             </div>

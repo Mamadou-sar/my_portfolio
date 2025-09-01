@@ -90,7 +90,7 @@ const Footer: React.FC<FooterProps> = ({className = ''}) => {
                                     <Code className="w-6 h-6 text-white"/>
                                 </div>
                                 <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                    DevPortfolio
+                                    MasCoding
                                 </h3>
                             </div>
 
@@ -234,7 +234,7 @@ const Footer: React.FC<FooterProps> = ({className = ''}) => {
 
                             {/* Copyright */}
                             <div className="flex items-center space-x-2 text-gray-400 text-sm">
-                                <span>© {currentYear} DevPortfolio. Fait avec</span>
+                                <span>© {currentYear} MasCoding Fait avec</span>
                                 <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse"/>
                                 <span>et beaucoup de café ☕</span>
                             </div>
