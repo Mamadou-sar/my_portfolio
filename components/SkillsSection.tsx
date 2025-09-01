@@ -60,7 +60,7 @@ const SkillsSection: React.FC = () => {
             name: 'Express.js',
             level: 82,
             category: 'Backend',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
             bgColor: 'bg-gray-700',
             borderColor: 'border-gray-700',
             description: 'Framework web Node.js',
@@ -69,7 +69,7 @@ const SkillsSection: React.FC = () => {
             name: 'Tailwind CSS',
             level: 88,
             category: 'Frontend',
-            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+            logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
             bgColor: 'bg-teal-500',
             borderColor: 'border-teal-500',
             description: 'Framework CSS utility-first',
@@ -194,9 +194,7 @@ const SkillsSection: React.FC = () => {
                         height={64}
                         src={skill.logo}
                         alt={`${skill.name} logo`}
-                        className={`w-16 h-16 transition-all duration-300 group-hover:scale-110 ${
-                            skill.name === 'Express.js' ? 'filter invert dark:invert-0' : ''
-                        }`}
+                        className='w-16 h-16 transition-all duration-300 group-hover:scale-110'
                         onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';

@@ -14,8 +14,8 @@ export default function Hero() {
                         Bonjour,
                         <br/> je suis{' '}
                         <span className='text-accent font-semibold'>Mamadou SARR</span> <br/>{' '}
-                        Développeur <span className='text-secondary'>Web</span> &{' '}
-                        <span className='text-secondary'>Mobile</span> Freelance
+                        Développeur <span className='font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent'>Web</span> &{' '}
+                        <span className='font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent'>Mobile</span> Freelance
                     </h1>
                     <p className='text-base-100 italic text-lg'>
                         Ingénieur logiciel devenu entrepreneur. J&apos;adore créer et aider les

@@ -1,8 +1,9 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-import { NextFont } from 'next/dist/compiled/@next/font';
+import {NextFont} from 'next/dist/compiled/@next/font';
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const satoshi: NextFont = localFont({
     src: [
@@ -24,16 +25,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-    children,
-}: Readonly<{
+                                       children,
+                                   }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang='en' data-theme='masskooramy'>
-            <body className={satoshi.className}>
-            <NavBar/>
-            {children}
-            </body>
+        <html lang='en'
+              data-theme='masskooramy'>
+        <body className={satoshi.className}>
+        <NavBar/>
+        {children}
+        <Footer/>
+        </body>
         </html>
     );
 }

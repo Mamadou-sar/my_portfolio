@@ -4,10 +4,10 @@ import {Menu} from 'lucide-react';
 import {usePathname} from 'next/navigation';
 
 const menus = [
-    {name: 'Home', link: '/'},
-    {name: 'About', link: '/about'},
+    {name: 'Accueil', link: '/'},
+    {name: 'A Propos', link: '/a-propos'},
     {name: 'Services', link: '/services'},
-    {name: 'Work', link: '/work'}
+    {name: 'Projets', link: '/projets'}
 ];
 export default function NavBar() {
     const pathname = usePathname();
@@ -36,9 +36,11 @@ export default function NavBar() {
                 {/* contact */}
                 <div className='flex items-center gap-4'>
                     <div className='flex items-stretch'>
-                        <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300  items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-2xl hidden lg:flex text-lg">
-                            <Link href='/contact'>Contact us</Link>
-                        </button>
+                        <Link href='/contact'>
+                            <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300  items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-2xl hidden lg:flex text-lg">
+                                Contact us
+                            </button>
+                        </Link>
                         <div className='dropdown dropdown-end block lg:hidden'>
                             <div tabIndex={0}
                                  role='button'
@@ -63,9 +65,11 @@ export default function NavBar() {
                                 ))}
                                 <li>
                                     {' '}
-                                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-2xl mt-3 text-lg">
-                                        <Link href='/contact'>Contact us</Link>
-                                    </button>
+                                    <Link href='/contact'>
+                                        <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-2xl mt-3 text-lg">
+                                            Contact us
+                                        </button>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
