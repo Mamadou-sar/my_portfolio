@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // Types
 interface Skill {
@@ -171,7 +171,7 @@ const SkillsSection: React.FC = () => {
 
     // Skill Card Component
 
-    const SkillCard: React.FC<{ skill: Skill; index: number }> = ({ skill, index }) => (
+    const SkillCard: React.FC<{ skill: Skill; index: number }> = ({skill, index}) => (
         <div
             className='group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 hover:-translate-y-2'
             onMouseEnter={() => setHoveredSkill(index)}
@@ -226,7 +226,7 @@ const SkillsSection: React.FC = () => {
             </p>
 
             {/* Hover Effect Overlay */}
-            <div className='absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-50 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none' />
+            <div className='absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-50 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none'/>
         </div>
     );
 
@@ -246,7 +246,7 @@ const SkillsSection: React.FC = () => {
                 </div>
 
                 {/* Filter Tabs */}
-                <div className='flex flex-wrap justify-center gap-4 mb-12'>
+                <div className='flex flex-wrap justify-center gap-4 mb-16'>
                     {(['Toutes', ...categories] as const).map((category: string) => (
                         <button
                             onClick={() => SetSelectCategory(category)}
@@ -265,51 +265,11 @@ const SkillsSection: React.FC = () => {
                 {/* Skills Grid */}
                 <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'>
                     {filteredSkills.map((skill, index) => (
-                        <SkillCard key={skill.name} skill={skill} index={index} />
+                        <SkillCard key={skill.name}
+                                   skill={skill}
+                                   index={index}/>
                     ))}
                 </div>
-
-                {/* Stats Section */}
-                {/*<div className='mt-20 grid grid-cols-2 md:grid-cols-4 gap-6'>
-                    {(
-                        [
-                            {
-                                label: 'Technologies',
-                                value: '15+',
-                                color: 'from-blue-500 to-cyan-500',
-                            },
-                            {
-                                label: "Années d'expérience",
-                                value: '3+',
-                                color: 'from-green-500 to-emerald-500',
-                            },
-                            {
-                                label: 'Projets réalisés',
-                                value: '25+',
-                                color: 'from-purple-500 to-pink-500',
-                            },
-                            {
-                                label: 'Satisfaction client',
-                                value: '100%',
-                                color: 'from-orange-500 to-red-500',
-                            },
-                        ] as Stat[]
-                    ).map((stat: Stat, index: number) => (
-                        <div
-                            key={stat.label}
-                            className='text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group'
-                        >
-                            <div
-                                className={`text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300`}
-                            >
-                                {stat.value}
-                            </div>
-                            <div className='text-gray-600 dark:text-gray-400 text-sm font-medium'>
-                                {stat.label}
-                            </div>
-                        </div>
-                    ))}
-                </div>*/}
             </div>
         </section>
     );

@@ -126,7 +126,7 @@ const ExperienceSection = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-5xl font-bold text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                         Expériences Professionnelles
                     </h2>
                     <p className="text-gray-400 text-lg">
@@ -169,23 +169,23 @@ const ExperienceSection = () => {
 
                     {/* Experience Details */}
                     <div className="lg:col-span-2">
-                        <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-gray-700">
+                        <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-4 md:p-8 shadow-2xl border border-gray-700">
                             {/* Header */}
                             <div className={`bg-gradient-to-r ${currentExp.color} p-6 rounded-xl mb-6`}>
                                 <h3 className="text-3xl font-bold text-white mb-2">{currentExp.position}</h3>
                                 <div className="flex flex-wrap gap-4 text-white/90">
-                  <span className="flex items-center gap-2">
-                    <Briefcase className="w-4 h-4"/>
-                      {currentExp.company}
-                  </span>
                                     <span className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4"/>
+                                        <Briefcase className="w-4 h-4"/>
+                                        {currentExp.company}
+                                    </span>
+                                    <span className="flex items-center gap-2">
+                                        <Calendar className="w-4 h-4"/>
                                         {currentExp.period}
-                  </span>
+                                    </span>
                                     <span className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4"/>
+                                        <MapPin className="w-4 h-4"/>
                                         {currentExp.location}
-                  </span>
+                                    </span>
                                 </div>
                             </div>
 
@@ -223,8 +223,8 @@ const ExperienceSection = () => {
                                             key={idx}
                                             className="px-3 py-1 bg-gray-700/50 text-gray-300 rounded-full text-sm border border-gray-600 hover:border-gray-500 transition-colors"
                                         >
-                      {tech}
-                    </span>
+                                            {tech}
+                                        </span>
                                     ))}
                                 </div>
                             </div>

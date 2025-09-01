@@ -19,30 +19,30 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({
-    profileImage = AboutImage,
-    name = 'Mamadou SARR',
-    title = 'Développeur Full-Stack & Mobile',
-    description = "Passionné par le développement web et mobile, je crée des applications modernes et performantes. J’aime transformer des idées en produits numériques concrets, Avec plusieurs années d'expérience, je maîtrise les technologies front-end, back-end et le développement d'applications mobiles cross-platform.",
-    skills = [
-        {
-            desc: `Développement d’applications web modernes, responsives et performantes avec
+                                         profileImage = AboutImage,
+                                         name = 'Mamadou SARR',
+                                         title = 'Développeur Full-Stack & Mobile',
+                                         description = "Passionné par le développement web et mobile, je crée des applications modernes et performantes. J’aime transformer des idées en produits numériques concrets, Avec plusieurs années d'expérience, je maîtrise les technologies front-end, back-end et le développement d'applications mobiles cross-platform.",
+                                         skills = [
+                                             {
+                                                 desc: `Développement d’applications web modernes, responsives et performantes avec
                   les frameworks JavaScript les plus utilisés.`,
-            category: 'frontend',
-        },
-        {
-            desc: `Expérience avec Node.js, bases de données et API REST/GraphQL pour donner vie
+                                                 category: 'frontend',
+                                             },
+                                             {
+                                                 desc: `Expérience avec Node.js, bases de données et API REST/GraphQL pour donner vie
                   aux fonctionnalités côté serveur.`,
-            category: 'backend',
-        },
-        {
-            desc: 'Création d’applications mobiles cross-platform avec React Native, optimisées pour iOS et Android.',
-            category: 'mobile',
-        },
-        { desc: '', category: 'outils' },
-    ],
-    experience = '5+ ans',
-    location = 'Lerida, Espagne',
-}) => {
+                                                 category: 'backend',
+                                             },
+                                             {
+                                                 desc: 'Création d’applications mobiles cross-platform avec React Native, optimisées pour iOS et Android.',
+                                                 category: 'mobile',
+                                             },
+                                             {desc: '', category: 'outils'},
+                                         ],
+                                         experience = '5+ ans',
+                                         location = 'Lerida, Espagne',
+                                     }) => {
     const categoryColors = {
         frontend: 'bg-blue-500',
         backend: 'bg-green-500',
@@ -80,7 +80,7 @@ const About: React.FC<AboutProps> = ({
                     {/* Image et infos personnelles */}
                     <div className='text-center lg:text-left'>
                         <div className='relative inline-block mb-8'>
-                            <div className='w-[420px] h-[550px] mx-auto lg:mx-0 relative overflow-hidden rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300'>
+                            <div className='w-[320px] md:w-[420px] h-[550px] mx-auto lg:mx-0 relative overflow-hidden rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300'>
                                 <Image
                                     src={profileImage}
                                     alt={`Photo de profil de ${name}`}
